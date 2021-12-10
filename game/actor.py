@@ -24,4 +24,4 @@ class Actor:
 
     def set_velocity(self, velocity):
         self._velocity = velocity
-        
+
