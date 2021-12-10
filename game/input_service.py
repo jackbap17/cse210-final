@@ -7,8 +7,8 @@ class InputService:
     def __init__(self, screen):
         self._screen = screen
         self._keys = {}
-        self._keys[97] = Point(-4,0) #A
-        self._keys[100] = Point(4,0) #D
+        self._keys[97] = Point(-2,0) #A
+        self._keys[100] = Point(2,0) #D
 
     def get_directions(self):
         direction = Point(0,0)
