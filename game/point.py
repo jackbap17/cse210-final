@@ -12,10 +12,10 @@ class Point:
         return self._x == other.get_x() and self._y  == other.get_y()
 
     def get_x(self):
-        return self._x
+        return int(self._x)
 
     def get_y(self): 
-        return self._y
+        return int(self._y)
 
     def is_zero(self):
        return self._x == 0 and self._y == 0
