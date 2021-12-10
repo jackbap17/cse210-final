@@ -3,7 +3,10 @@ from game import constants
 from game.actor import Actor
 from game.point import Point
 
-class CreateCast:
+class CreateCast():
+    
+   # def __init__(self, cast):
+   #     self._cast = cast 
 
     def create_ship(self, cast):
         x = int(constants.MAX_X / 2)
@@ -15,26 +18,27 @@ class CreateCast:
 
         cast["ship"] = [ship]
 
-    def create_missiles(self, cast,ship):
-        cast["missiles"] = []
+    def create_missiles(self, cast):
+        #cast["missiles"] = []
+        ship = cast["ship"][0]
         position = ship.get_position()
         velocity = Point(0,-1)
         missile = Actor()
         missile.set_text("|")
         missile.set_position(position)
         missile.set_velocity(velocity)
-        cast["missile"].append(missile)
+        cast["missiles"].append(missile)
 
     def create_aliens(self, cast):
-        cast["aliens"] = []
-        for x in range(random.randint(1,5)):
-            position = Point(random.randint(1,70), 2)
-            velocity = Point(random.randint(-1,1),1)
-            alien = Actor()
-            alien.set_text("V")
-            alien.set_position(position)
-            alien.set_velocity(velocity)
-            cast["aliens"].append(alien)
+        #cast["aliens"] = []
+        
+        position = Point(random.randint(1,35) *2, 2)
+        velocity = Point(0,2)
+        alien = Actor()
+        alien.set_text("V")
+        alien.set_position(position)
+        alien.set_velocity(velocity)
+        cast["aliens"].append(alien)
 
 
 
