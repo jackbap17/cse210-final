@@ -11,6 +11,11 @@ class Point:
     def equals(self, other):
         return self._x == other.get_x() and self._y  == other.get_y()
 
+    def hits(self, other):
+        return (self._x == other.get_x() or self._x + 1 == other.get_x() or self._x -1 == other.get_x()) and (self._y == other.get_y() or self._y - 1 == other.get_y())
+    
+
+
     def get_x(self):
         return int(self._x)
 

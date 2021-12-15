@@ -31,14 +31,14 @@ class CreateCast():
 
     def create_aliens(self, cast):
         #cast["aliens"] = []
-        
-        position = Point(random.randint(1,35) *2, 2)
-        velocity = Point(0,2)
-        alien = Actor()
-        alien.set_text("V")
-        alien.set_position(position)
-        alien.set_velocity(velocity)
-        cast["aliens"].append(alien)
+        for x in range(random.randint(1,5)):
+            position = Point(random.randint(1,35) *2, 2)
+            velocity = Point(random.randint(-2,2),1)
+            alien = Actor()
+            alien.set_text("V")
+            alien.set_position(position)
+            alien.set_velocity(velocity)
+            cast["aliens"].append(alien)
 
 
 

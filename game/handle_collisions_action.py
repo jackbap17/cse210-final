@@ -12,13 +12,16 @@ class HandleCollisionsAction(Action):
         missiles = cast["missiles"] 
         aliens = cast["aliens"]
         
-        for alien in aliens:
-            for missile in missiles:
-                if missile.get_position().equals(alien.get_position()):
+        for missile in missiles:
+            if missile.get_position().get_y() == 1:
+                    missile.set_text(' ')
+            for alien in aliens:
+                if ship.get_position().hits(alien.get_position()):
+                    ship.set_text(" ")
+                    sys.exit()
+                if missile.get_position().hits(alien.get_position()):
                     alien.set_text(" ")
-                    missile.set_text(' ')
-                if missile.get_position().get_y() == 1:
-                    missile.set_text(' ')
+                    missile.set_text(' ')           
 
         a= 0                    
         for alien in aliens:
@@ -27,7 +30,7 @@ class HandleCollisionsAction(Action):
             a +=1
         m = 0
         for missile in missiles:
-            if missile.get_text == " ":
+            if missile.get_text() == " ":
                 cast["missiles"].pop(m)
             m +=1           
 
